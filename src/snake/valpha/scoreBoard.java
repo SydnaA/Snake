@@ -16,7 +16,7 @@ import java.util.Scanner;
  * @author andysheng
  */
 public class scoreBoard {
-    public static String currentVersion="2.7.5.7";
+    public static String currentVersion="2.7.6.0";
     public static int classicScore=0;
     public static int lightningScore=0;
     public static int enduranceScore=0;
@@ -93,7 +93,8 @@ public class scoreBoard {
         
         version=scores[0];
         int pVersion=this.processVersion(version);
-        if((pVersion<=2757)&&(pVersion>2741))
+        System.out.println(pVersion);
+        if((pVersion<=2757)||(pVersion>2741))
         {     
              classic=scores[1];
              lightning=scores[2];
@@ -110,6 +111,7 @@ public class scoreBoard {
             inverse=scores[4];
             
         }
+        System.out.println(classic);
         
          String[] mod=this.scoreChanges(classic, lightning, endurance, Double, inverse);
         classicScore=Integer.parseInt(mod[0]);
